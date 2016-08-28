@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+
+      var c;
+      var ctx;
+
+      function init(){
+        c = document.querySelector("#canvas");
+        ctx = c.getContext('2d');       
+        refresh();
+        requestAnimationFrame(frame);
+        signBook();
+      }
+
+      function signBook(){
+        var tar = document.querySelector("#sign");
+        for (var i = 0; i < 20; i++){
+          var p = document.createElement("p");
+          p.style.position = 'relative';
+          p.style.margin = -i + "px";
+          p.style.left = i+"0px";
+          p.appendChild(document.createTextNode("please sign my guestbook"));
+          tar.appendChild(p);
+        }
+      }
+
+      function refresh(){
+        c.setAttribute('width', window.innerWidth);
+
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(0,0,c.width,c.height);
+      }
+
+      function frame(timestamp){
+        refresh();
+
+        ctx.font = "34px Times New Roman";
+        ctx.save();
+        
+        for (var i = 0; i < 50; i++){
+          ctx.fillStyle = "rgba("+ 4 * i + ",255,255," + 0.02 * i + ")";
+          ctx.rotate(1 - (0.01 * i * (timestamp/10000)));
+          ctx.fillText("welcome to my website", i, 60+(i*2+ timestamp * 0.01));
+        }
+
+        ctx.restore();
+        ctx.fillStyle="white";
+        ctx.font = "70px Times New Roman";
+        ctx.shadowColor = "darkblue";
+        ctx.shadowOffsetX = timestamp * 0.01;
+        ctx.shadowOffsetY = timestamp * 0.005;
+        ctx.shadowBlur = 30;
+        ctx.fillText("a l e x a n d e r   l o z a d a", 40, 80);
+        ctx.fillRect(40, 90, 800, 3);
+
+        requestAnimationFrame(frame);
+      }
+
+      window.onload = init;
+      window.onresize = refresh;  
+    </script>
+
+    <style>
+      #canvas{
+      }
+      html, body{
+        margin: 0;
+      }
+      body{
+        width: 100%;
+        font-family: monospace;
+      }
+      #content{
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      h1{
+        font-size: 40pt;
+      }
+    </style>
+
+
+  </head>
+
+  <body>
+    <canvas height='300px' id="canvas">
+      
+    </canvas>
+
+    <div id="content">
+      <h1 style="justify: right; width: 100%;"><strike>Welcome to My Site</strike></h1>
+      <div id="sign"></div>
+      <h2 style="font-size: 50px; position: relative; top: -100px; left: 300px;">330</h2>
+    </div>
+
+    
+  </body>
+</html>
