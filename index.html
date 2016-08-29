@@ -55,6 +55,9 @@
         ctx.fillText("a l e x a n d e r   l o z a d a", 40, 80);
         ctx.fillRect(40, 90, 800, 3);
 
+        ctx.font = "24px Times New Roman";
+        ctx.fillText("igm 330", 60, 120);
+
         requestAnimationFrame(frame);
       }
 
@@ -71,6 +74,7 @@
       body{
         width: 100%;
         font-family: monospace;
+        overflow-x: hidden;
       }
       #content{
         max-width: 700px;
@@ -79,6 +83,14 @@
       }
       h1{
         font-size: 40pt;
+      }
+      table{
+        width: 100%;
+        margin: 24px 0;
+        border: 1px solid black;
+      }
+      a:visited{
+        color: blue;
       }
     </style>
 
@@ -91,10 +103,70 @@
     </canvas>
 
     <div id="content">
-      <h1 style="justify: right; width: 100%;"><strike>Welcome to My Site</strike></h1>
-      <div id="sign"></div>
-      <h2 style="font-size: 50px; position: relative; top: -100px; left: 300px;">330</h2>
+      <div style="margin-bottom: -130px;">
+        <h1 style="justify: right; width: 100%;"><strike>Welcome to My Site</strike></h1>
+        <div id="sign"></div>
+        <h2 style="font-size: 50px; position: relative; display: inline-block; top: -100px; left: 300px;">330</h2>
+      </div>
+      <div style="text-align: right; width: 100%;">
+        <span id="projects" style="background: yellow; font-size: 48px;">projects</span>
+      </div>
+      <table id="projects-table">
+        <tr>
+          <td>0912574830</td>
+          <td><a href="hello-canvas/hello-canvas.html" target="_blank">Hello, Canvas!</a></td>
+        </tr>
+        <tr>
+          <td>0912574831</td>
+          <td><a href="#" target="_blank">Smiley ICE</a></td>
+        </tr>
+        <tr>
+          <td>0912574832</td>
+          <td><a href="#" target="_blank">Audio Visualizer</a></td>
+        </tr>
+        <tr>
+          <td>0912574833</td>
+          <td><a href="#" target="_blank">Game</a></td>
+        </tr>
+        <tr>
+          <td>0912574834</td>
+          <td><a href="#" target="_blank">Web Service App</a></td>
+        </tr>
+        <tr>
+          <td>0912574835</td>
+          <td><a href="#" target="_blank">Cloud Service App</a></td>
+        </tr>
+
+
+      </table>
+
+
+      <div style="text-align: left; width: 100%; margin-top: 60px;">
+        <span id="projects" style="background: yellow; font-size: 48px;">about ~/</span>
+      </div>
+
+      <img src="me.gif" style="max-width: 300px; border: 8px inset lightgrey; margin-top: 24px; float: left;"/>
+      <h1 style="position: relative; right: 100px; color: blue; text-shadow: 3px 3px 1px black"> hello im alex lozada </h1>
+      <p style="font-size: 16px; padding: 12px; position: relative; left: 12px;">
+      im a new media design student at rit.<br><br>
+      i like doing a lot of stuff, from programming to design.<br><br><br>
+      i spend most of my life on tumblr dot com.  <a href="http://bot.doomy.me">I have a bot modeled off of internet comments that says a lot of profane things.</a>
+      i also like to write stuff sometimes on my <a href="https://vaporsoft.net">ghost blog</a>.  i have some programming tutorials i wrote there<br><br>
+      <a href="https://github.com/piedoom">you can check out my github here</a><br><br>
+
+      
+      </p>
+
+      <h1 style="text-align: center; margin-bottom: 12px; font-size: 100px; color: blue; text-decoration: underline;">cat time</h1>
+      <h2 style="text-align: center; margin-top: 0;"> i have a cat named nano and he is the best and i love him </h2>
+      <img src="cat.gif" style="width: 100%;"/>
+       
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
     </div>
+
 
     
   </body>
